@@ -1,0 +1,275 @@
+/* ══════════════════════════════════════════════════════════════
+   edu.css — 에듀마스터 페이지 전용 스타일
+══════════════════════════════════════════════════════════════ */
+
+/* ── main_style.css의 풀페이지 전용 overflow: hidden 해제 ───── */
+html,
+body {
+  overflow: auto;
+  overflow-x: hidden;
+  height: auto;
+}
+
+/* ── 공통 ───────────────────────────────────────────────────── */
+#edu-main {
+  font-family: 'Pretendard', sans-serif;
+  background:
+    url(../imgs_sub/ceo/back1.png) center top / 100% auto no-repeat,
+    url(../imgs_sub/ceo/back2.png) center top / cover no-repeat;
+}
+
+/* ── 섹션 1 · 헤더 ──────────────────────────────────────────── */
+#edu-sec1 {
+  padding-top: var(--gnb-h, 72px);
+  padding-bottom: 60px;
+}
+
+/* 헤더 콘텐츠 중앙 정렬 */
+.edu-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+/* 상단 pill 배지 */
+.edu-badge {
+  display: inline-block;
+  fill: rgba(255, 255, 255, 0.07);
+stroke-width: 1px;
+stroke: rgba(142, 142, 142, 0.60);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  padding: 7px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin-bottom: 28px;
+}
+
+/* 타이틀 행 */
+.edu-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+/* 타이틀 텍스트 — 잎이 뒤에 깔리도록 z-index: 1 */
+.edu-title {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
+  font-weight: 900;
+  background: linear-gradient(to top left, #CCF352 0%, #FFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+/* name.png 전체를 타이틀 뒤에 중앙으로 깔기 */
+.edu-title::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130%;
+  height: 200%;
+  background: url(../imgs_sub/ceo/name.png) center / contain no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 서브 텍스트 */
+.edu-sub {
+  margin-top: 30px;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  opacity: 0.6;
+
+}
+
+/* ── 섹션 2 · 프로필 카드 그리드 ───────────────────────────── */
+#edu-sec2 {
+  padding: 0px 40px 80px;
+}
+
+.pro-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 프로필 카드 */
+.pro-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  background: #111;
+  perspective: 900px;
+}
+
+/* ── 카드 플립 애니메이션 ────────────────────────────────────── */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.pro-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+  overflow: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to top left, #CCF352 0%, #FFF 100%);
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 48px;
+}
+
+.back-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-align: center;
+  line-height: 1.6;
+  margin: 8px 0 0;
+}
+
+.back-desc {
+  flex: 1;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pro-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* 하단 그라디언트 오버레이 */
+.pro-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(70, 68, 68, 0.72) 0%, rgba(0, 0, 0, 0.08) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* 텍스트: 좌하단 */
+.pro-info {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pro-branch {
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.03em;
+}
+
+.pro-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #CCF352;
+  line-height: 1.3;
+}
+
+/* ─── 1280px 이하: 표준 노트북 ───────────────────────────────── */
+@media (max-width: 1280px) {
+  #edu-sec2 { padding: 0 24px 80px; }
+}
+
+/* ─── 1024px 이하: 소형 노트북 / iPad 가로 ──────────────────── */
+@media (max-width: 1024px) {
+  #edu-sec2 { padding: 0 16px 60px; }
+  .pro-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── 모바일 ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .edu-header {
+    padding: 40px 16px 32px;
+  }
+
+  .edu-badge {
+    font-size: 0.7rem;
+    padding: 6px 16px;
+    margin-bottom: 20px;
+  }
+
+  .edu-title-row {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .edu-sub {
+    font-size: 0.78rem;
+  }
+
+  /* 카드 그리드: 5열 → 2열 */
+  #edu-sec2 {
+    padding: 36px 16px 60px;
+  }
+
+  .pro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 마지막 홀수 카드(17번째) 중앙 정렬 */
+  .pro-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .pro-name {
+    font-size: 0.72rem;
+  }
+
+  .pro-branch {
+    font-size: 0.58rem;
+  }
+}

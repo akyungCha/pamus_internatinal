@@ -1,0 +1,427 @@
+/* ══════════════════════════════════════════════════════════════
+   중등 Aristos 페이지 전용 스타일
+══════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════
+   섹션 1 · 커리큘럼
+══════════════════════════════════════════════════════════════ */
+
+#sec-curriculum {
+    background: url(../imgs_sub/aristos/back1.png) center bottom / 100% 100% no-repeat;
+}
+
+.cur-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 8, 4, 0.76);
+}
+
+/* 라인 + 카드 */
+.line-cards-wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 28%;
+    width: 70%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 연결 라인 도형 */
+.cur-line {
+    display: block;
+    width: 100%;
+    height: auto;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 2.2s ease-out;
+}
+
+.cur-line.drawn {
+    clip-path: inset(0 0% 0 0);
+}
+
+/* 카드 래퍼 — 라인 이미지 영역에 완전히 겹침 */
+.cards-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 상단 브랜딩 */
+.cur-brand {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.cur-quote {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.cur-quote.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cur-logo {
+    width: 280px;
+    margin-top: -20px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.cur-logo.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── 카드 이미지 공통 ────────────────────────────────────────── */
+.card-img {
+    position: absolute;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;                                   
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.card-img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ARI 카드  */
+.card-img-1 {
+    left: 5%;
+    top: 20%;
+    width: 24%;
+}
+
+/* STO 카드 */
+.card-img-2 {
+    left: 36%;
+    top: 22%;
+    width: 28%;
+}
+
+/* SS 카드 */
+.card-img-3 {
+    left: 72%;
+    top: 20%;
+    width: 22%;
+}
+
+/* 탭 바 — 데스크탑에서 숨김 */
+.mob-tabs { display: none; }
+
+/* ─── 1640px 이하: 대형 노트북 ──────────────────────────────── */
+@media (max-width: 1640px) {
+    .line-cards-wrap { top: 32%; }
+}
+
+/* ─── 1440px 이하: 데스크탑 ──────────────────────────────── */
+@media (max-width: 1440px) {
+    .line-cards-wrap { top: 32%; }
+}
+
+/* ─── 1280px 이하: 일반 노트북 ──────────────────────────────── */
+@media (max-width: 1280px) {
+    .line-cards-wrap { width: 76%; top: 33%; }
+}
+
+/* ─── 1024px 이하: 소형 노트북 / iPad 가로 ─────────────────── */
+@media (max-width: 1024px) {
+    .line-cards-wrap { width: 82%; top: 33%; }
+    .cur-brand { top: 140px; }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .cur-brand {
+        top: 125px;
+        white-space: normal;
+        text-align: center;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .cur-quote { font-size: 0.90rem; }
+
+    .cur-logo { width: 250px; }
+
+    /* 라인 숨김, 래퍼 위치 조정 */
+    .cur-line { display: none; }
+
+    .line-cards-wrap {
+        top: 350px;
+        width: 80%;
+    }
+
+    /* 탭 바 */
+    .mob-tabs {
+        display: flex;
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        background: rgba(10, 6, 3, 0.55);
+        border-radius: 12px;
+        padding: 5px;
+        gap: 4px;
+        z-index: 3;
+    }
+
+    .mob-tab {
+        flex: 1;
+        padding: 17px 0;
+        border: none;
+        border-radius: 8px;
+        background: transparent;
+        color: rgb(255, 255, 255);
+        font-size: 1.1rem; 
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .mob-tab.active {
+        background: #2dc4a0;
+        color: #0d2620;
+    }
+
+    /* 카드 래퍼 — 라인 숨김 */
+    .cards-wrap {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        height: auto;
+        display: block;
+        z-index: 2;
+    }
+
+    /* 카드 이미지 — 기본 숨김, 데스크탑 위치값 해제 */
+    .card-img {
+        display: none;
+        position: static;
+        width: 100%;
+        opacity: 0;
+        transform: none;
+        transition: opacity 0.3s ease;
+    }
+
+    /* 활성 카드 */
+    .card-img.mob-active {
+        display: block;
+        opacity: 1;
+    }
+
+    /* 데스크탑 개별 위치값 무력화 */
+    .card-img-1,
+    .card-img-2,
+    .card-img-3 {
+        left: auto;
+        right: auto;
+        bottom: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    .card-img-1,
+  .card-img-3 {
+      width:80%;  
+      margin: 0 auto;
+    margin-left: 7%;
+  }
+
+    /* STO 카드  */
+    .card-img-2 {
+        margin-top: 0;
+    }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   섹션 2  왜 아리스토스인가
+══════════════════════════════════════════════════════════════ */
+
+#sec-why {
+    background: url(../imgs_sub/aristos/back2.png) center center / cover no-repeat;
+}
+
+/* 전체 레이아웃 */
+.why-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 60px 48px;
+    gap: 36px;
+}
+
+/* 상단 헤드 */
+.why-head {
+    text-align: center;
+}
+
+.why-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #5B3419;
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+}
+
+.why-quote {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.2rem;
+    color: #1F1F1F;
+    line-height: 1.9;
+    text-align: center;
+}
+
+/* 카드 영역 */
+.why-cards {
+    width: 100%;
+    max-width: 860px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* 1행 래퍼 */
+.why-row {
+    display: flex;
+    gap: 14px;
+}
+
+/* 카드 공통 */
+.step-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(90, 40, 10, 0.08);
+    padding: 32px 36px;
+    text-align: center;
+    opacity: 0;                          /* 초기 숨김 */
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.step-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 1행 카드 — 동일 너비 */
+.card-step1,
+.card-step2 {
+    flex: 1;
+}
+
+/* 2행 카드 — 전체 너비 */
+.card-step3 {
+    width: 100%;
+}
+
+/* 스텝 pill 배지 */
+.step-pill {
+    display: inline-block;
+    background: #7b3f1e;
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+}
+
+/* 카드 타이틀 */
+.step-ttl {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3b1f0e;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* 카드 설명 */
+.step-desc {
+    font-size: 0.9rem;
+    color: #6b4c36;
+    line-height: 1.75;
+}
+
+.step-desc strong {
+    font-weight: 700;
+    color: #3b1f0e;
+}
+
+/* ─── 1280px 이하: why 섹션 패딩 ────────────────────────────── */
+@media (max-width: 1280px) {
+    .why-inner { padding: 80px 40px 40px; }
+    .why-title { font-size: 2.5rem; }
+}
+
+/* ─── 1024px 이하: why 섹션 ─────────────────────────────────── */
+@media (max-width: 1024px) {
+    .why-inner { padding: 80px 24px 32px; gap: 24px; }
+    .why-title { font-size: 2rem; }
+    .why-quote { font-size: 1rem; line-height: 1.7; }
+    .step-card { padding: 24px 24px; }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .why-inner {
+        padding: 88px 20px 32px;
+        gap: 24px;
+    }
+
+    .why-title {
+        font-size: 1.5rem;
+    }
+
+    .why-quote {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .why-row {
+        flex-direction: column;
+    }
+
+    .step-card {
+        padding: 24px 20px;
+    }
+
+    .step-desc {
+    line-height: 1.35;
+}
+}
