@@ -1,0 +1,412 @@
+/* ══════════════════════════════════════════════════════════════
+   admission.css — 입학안내 페이지 전용 스타일
+   공용 리셋 · GNB · fp-wrapper · fp-section → main_style.css 참조
+══════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════
+   섹션 0 · 입학 절차
+══════════════════════════════════════════════════════════════ */
+
+#adm-step {
+  background: url(../imgs_sub/admissions/back.png) center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  padding: calc(var(--gnb-h) + 20px) 24px 32px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   헤더 텍스트 블록
+══════════════════════════════════════════════════════════════ */
+
+.adm-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-top: -70px;
+}
+
+/* 타이틀 "Admissions" */
+.adm-title {
+  font-size: clamp(36px, 4.5vw, 62px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  /* 애니메이션 초기값 */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.adm-title.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 가로 구분선 */
+.adm-divider {
+  display: block;
+  width: 44px;
+  height: 1.5px;
+  background: rgb(255, 255, 255);
+  margin: 14px auto 12px;
+  /* 애니메이션 초기값 */
+  opacity: 0;
+  transition: opacity 0.5s ease 0.2s;
+}
+
+.adm-divider.is-visible {
+  opacity: 1;
+}
+
+/* 서브텍스트 "입학 절차" */
+.adm-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.06em;
+  /* 애니메이션 초기값 */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+}
+
+.adm-sub.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   스텝 카드 컨테이너
+══════════════════════════════════════════════════════════════ */
+
+.step-cards {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 1080px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   개별 카드 공통 스타일
+══════════════════════════════════════════════════════════════ */
+
+.step-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px 18px 24px;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  /* 애니메이션 초기값 */
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.step-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* STEP 번호 */
+.step-num {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #7c5cbf;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+/* 아이콘 */
+.step-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* 카드 내부 구분선 */
+.step-card-line {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #e8e8ee;
+  margin: 2px 0;
+  align-self: stretch;
+}
+
+/* 카드 타이틀 */
+.step-card-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+/* 카드 설명 텍스트 */
+.step-card-desc {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #8a8a9a;
+  line-height: 1.75;
+  word-break: keep-all;
+}
+
+/* ── 카드별 개별 셀렉터 (필요 시 오버라이드용) ──────────── */
+.step-card-1 { }
+.step-card-2 { }
+.step-card-3 { }
+.step-card-4 { }
+.step-card-5 { }
+
+
+/* ══════════════════════════════════════════════════════════════
+   반응형
+══════════════════════════════════════════════════════════════ */
+
+/* ─── 1280px 이하: 노트북 ───────────────────────────────────── */
+@media (max-width: 1280px) {
+  .step-cards { max-width: 960px; }
+  .step-card  { padding: 24px 14px 20px; }
+}
+
+/* ─── 1024px 이하: 소형 노트북 / iPad 가로 ─────────────────── */
+@media (max-width: 1024px) {
+  #adm-step   { gap: 28px; padding: calc(var(--gnb-h) + 16px) 20px 28px; }
+  .step-cards { max-width: 860px; gap: 10px; }
+  .step-icon  { width: 52px; height: 52px; }
+  .step-card-title { font-size: 13.5px; }
+}
+
+@media (max-width: 768px) {
+
+  #adm-step {
+    gap: 24px;
+    padding: calc(var(--gnb-h) + 16px) 16px 24px;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+
+  .adm-header {
+    margin-top: 0;
+  }
+
+  .adm-title {
+    font-size: 32px;
+  }
+
+  .step-cards {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 440px;
+    gap: 10px;
+  }
+
+  .step-card {
+    padding: 20px 14px 18px;
+    gap: 8px;
+  }
+
+  .step-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .step-card-title {
+    font-size: 13px;
+  }
+
+  .step-card-desc {
+    display: none;
+  }
+
+  .step-card-5 {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 5px);
+  }
+}
+
+@media (max-width: 420px) {
+
+  .step-cards {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   섹션 1 · 브랜치 바로가기
+══════════════════════════════════════════════════════════════ */
+
+#adm-branch {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* ── 헤더 + 리스트 래퍼 ──────────────────────────────────── */
+.branch-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(var(--gnb-h) + 28px) 24px 20px;
+  width: 100%;
+}
+
+/* ── 헤더 텍스트 ─────────────────────────────────────────── */
+.branch-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.branch-hd-title {
+  font-size: clamp(26px, 3vw, 44px);
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.branch-hd-line {
+  display: block;
+  width: 34px;
+  height: 2px;
+  background: #1a1a2e;
+  margin: 11px auto 10px;
+}
+
+.branch-hd-sub {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a2a5e;
+  letter-spacing: 0.02em;
+}
+
+/* ── 브랜치 리스트 ────────────────────────────────────────── */
+.branch-list {
+  width: 100%;
+  max-width: 720px;
+}
+
+.branch-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 14px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.region-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a2a5e;
+  min-width: 58px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.branch-links {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 8px;
+}
+
+.branch-link {
+  font-size: 15px;
+  color: #333333;
+  text-decoration: none;
+  line-height: 1.55;
+  transition: color 0.18s;
+}
+
+.branch-link:hover {
+  color: #1a2a5e;
+  text-decoration: underline;
+}
+
+/* ── 하단 배너 ────────────────────────────────────────────── */
+.footer-banner {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  height: 116px;
+  background: url(../imgs_sub/admissions/footer.png) center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+.footer-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 7, 22, 0.55);
+}
+
+.footer-banner-text {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   모바일 반응형 (섹션 1)
+══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  .branch-main {
+    padding: calc(var(--gnb-h) + 16px) 16px 16px;
+  }
+
+  .branch-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .branch-links {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+  }
+
+  .footer-banner {
+    max-width: none;
+    height: 100px;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  .footer-banner-text {
+    font-size: 13px;
+    text-align: center;
+    padding: 0 16px;
+  }
+}
