@@ -163,21 +163,6 @@
 }
 .hero-btn:hover { background: rgba(255, 255, 255, 0.12); }
 
-/* ─── 1280px 이하: 사진 컬럼 너비 축소 ─────────────────────── */
-@media (max-width: 1280px) {
-  .hero-col { flex: 0 0 18vw; }
-  .사진-왼쪽  { margin-left: 3vw; }
-  .사진-오른쪽 { margin-right: 3vw; }
-}
-
-/* ─── 1024px 이하: 사진 컬럼 더 축소 ──────────────────────── */
-@media (max-width: 1024px) {
-  .hero-col { flex: 0 0 14vw; }
-  .사진-왼쪽  { margin-left: 2vw; }
-  .사진-오른쪽 { margin-right: 2vw; }
-  .cc-inner { padding: calc(var(--gnb-h) + 16px) 28px 28px; }
-}
-
 /* ── 모바일 ── */
 @media (max-width: 768px) {
   .hero-col { display: none; }

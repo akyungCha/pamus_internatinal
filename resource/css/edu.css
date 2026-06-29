@@ -438,20 +438,6 @@ stroke: rgba(142, 142, 142, 0.60);
   cursor: pointer;
 }
 
-/* ── 1280px 이하: 표준 노트북 ───────────────────────────────── */
-@media (max-width: 1280px) {
-  #edu-sec2 { padding: 0 24px 80px; }
-  .content-wrap.left { left: 180px; }
-}
-
-/* ── 1024px 이하: 소형 노트북 / iPad 가로 ──────────────────── */
-@media (max-width: 1024px) {
-  #edu-sec2 { padding: 0 16px 60px; }
-  .pro-grid { grid-template-columns: repeat(4, 1fr); }
-  .content-wrap.left  { left: 120px; }
-  .content-wrap.right { right: 6%; }
-}
-
 /* ── 모바일 ─────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .edu-header {

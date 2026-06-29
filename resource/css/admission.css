@@ -178,22 +178,8 @@
 
 
 /* ══════════════════════════════════════════════════════════════
-   반응형
+   모바일 반응형
 ══════════════════════════════════════════════════════════════ */
-
-/* ─── 1280px 이하: 노트북 ───────────────────────────────────── */
-@media (max-width: 1280px) {
-  .step-cards { max-width: 960px; }
-  .step-card  { padding: 24px 14px 20px; }
-}
-
-/* ─── 1024px 이하: 소형 노트북 / iPad 가로 ─────────────────── */
-@media (max-width: 1024px) {
-  #adm-step   { gap: 28px; padding: calc(var(--gnb-h) + 16px) 20px 28px; }
-  .step-cards { max-width: 860px; gap: 10px; }
-  .step-icon  { width: 52px; height: 52px; }
-  .step-card-title { font-size: 13.5px; }
-}
 
 @media (max-width: 768px) {
 
