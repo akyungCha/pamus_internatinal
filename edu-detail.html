@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>파머스국제어학원 — 브랜치</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="resource/css/main_style.css" />
+  <link rel="stylesheet" href="resource/css/edu.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       GNB
+  ══════════════════════════════════════════════════════════════ -->
+  <header id="gnb">
+    <a href="#" id="gnb-logo">
+      <img src="resource/imgs/logo.png" alt="파머스국제어학원" />
+    </a>
+
+    <nav id="gnb-nav" aria-label="주 메뉴">
+      <div class="nav-item">
+        <a class="nav-link" href="#">국제어학원</a>
+        <div class="nav-dropdown">
+          <a href="#">I lab PJT</a>
+          <a href="#">설득하는 영어</a>
+          <a href="#">핵심 역량</a>
+          <a href="#">핵심 가치</a>
+          <a href="#">학습시스템</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="#">초등 Stella</a>
+        <div class="nav-dropdown">
+          <a href="#">성장로드맵</a>
+          <a href="#">IB융합트랙</a>
+          <a href="#">훈련매커니즘</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="#">중등 Aristos</a>
+        <div class="nav-dropdown">
+          <a href="#">커리큘럼</a>
+          <a href="#">과정 소개</a>
+          <a href="#">TCT시스템</a>
+          <a href="#">최상위 SUMMIT</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="#">에듀마스터</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="#">입학안내</a>
+        <div class="nav-dropdown">
+          <a href="#">브랜치소개</a>
+          <a href="#">레벨테스트</a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="gnb-right">
+      <a href="#" class="btn-login">Login</a>
+      <a href="#" class="gnb-icon" aria-label="Instagram">
+        <img src="resource/imgs/insta.png" alt="Instagram" />
+      </a>
+      <a href="#" class="gnb-icon" aria-label="YouTube">
+        <img src="resource/imgs/youtube.png" alt="YouTube" />
+      </a>
+    </div>
+
+    <button id="gnb-burger" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       모바일 메뉴
+  ══════════════════════════════════════════════════════════════ -->
+  <div id="mobile-menu" role="dialog" aria-label="모바일 메뉴" aria-hidden="true">
+    <button id="mobile-close" aria-label="메뉴 닫기">&times;</button>
+
+    <div class="mob-nav-group">
+      <span class="mob-nav-title">국제어학원</span>
+      <div class="mob-nav-sub">
+        <a href="#">I lab PJT</a>
+        <a href="#">설득하는 영어</a>
+        <a href="#">핵심 역량</a>
+        <a href="#">핵심 가치</a>
+        <a href="#">학습시스템</a>
+      </div>
+    </div>
+    <div class="mob-nav-group">
+      <span class="mob-nav-title">초등 Stella</span>
+      <div class="mob-nav-sub">
+        <a href="#">성장로드맵</a>
+        <a href="#">IB융합트랙</a>
+        <a href="#">훈련매커니즘</a>
+      </div>
+    </div>
+    <div class="mob-nav-group">
+      <span class="mob-nav-title">중등 Aristos</span>
+      <div class="mob-nav-sub">
+        <a href="#">커리큘럼</a>
+        <a href="#">과정 소개</a>
+        <a href="#">TCT시스템</a>
+        <a href="#">최상위 SUMMIT</a>
+      </div>
+    </div>
+    <div class="mob-nav-group">
+      <a class="mob-nav-title" href="#" style="text-decoration:none">에듀마스터</a>
+    </div>
+    <div class="mob-nav-group">
+      <span class="mob-nav-title">입학안내</span>
+      <div class="mob-nav-sub">
+        <a href="#">브랜치소개</a>
+        <a href="#">레벨테스트</a>
+      </div>
+    </div>
+    <div class="mob-actions">
+      <a href="#" class="btn-login">Login</a>
+      <a href="#" class="gnb-icon" aria-label="Instagram">
+        <img src="resource/imgs/insta.png" alt="Instagram" style="filter:brightness(0) invert(1);width:22px;height:22px" />
+      </a>
+      <a href="#" class="gnb-icon" aria-label="YouTube">
+        <img src="resource/imgs/youtube.png" alt="YouTube" style="filter:brightness(0) invert(1);width:22px;height:22px" />
+      </a>
+    </div>
+  </div>
+
+
+  <main id="detail-main">
+
+    <!-- ── 섹션 1 · 죽전본원 (좌측) ─────────────────────────── -->
+    <section class="detail-section" id="section-1">
+      <div class="video-bg" data-video="1">
+        <video autoplay muted loop playsinline>
+          <source src="resource/imgs_sub/ceo/video/본원.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="content-wrap left">
+        <div class="detail-content">
+          <span class="sub-label">본원만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원 죽전본원</h1>
+          <p class="desc">영어를 가르치지 않고 <br class="mo-br">영어로 자신을 성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 죽전본원&nbsp;
+            <p class="sign-name">강영희</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">죽전본원 바로가기</a>
+          <button class="cta-interview" id="btn-interview-1">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 2 · 용인 고림브랜치 (우측) ──────────────────── -->
+    <section class="detail-section" id="section-2">
+      <div class="video-bg" data-video="2"></div>
+      <div class="content-wrap right">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>용인 고림브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 고림브랜치&nbsp;
+            <p class="sign-name">성기욱</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">고림브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-2">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 3 · 수원 광교브랜치 (좌측) ──────────────────── -->
+    <section class="detail-section" id="section-3">
+      <div class="video-bg" data-video="3"></div>
+      <div class="content-wrap left">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>수원 광교브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 광교브랜치&nbsp;
+            <p class="sign-name">강부경</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">광교브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-3">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 4 · 대전 동구브랜치 (우측) ──────────────────── -->
+    <section class="detail-section" id="section-4">
+      <div class="video-bg" data-video="4"></div>
+      <div class="content-wrap right">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>대전 동구브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 동구브랜치&nbsp;
+            <p class="sign-name">백지수</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">동구브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-4">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 5 · 서울 미아브랜치 (좌측) ──────────────────── -->
+    <section class="detail-section" id="section-5">
+      <div class="video-bg" data-video="5"></div>
+      <div class="content-wrap left">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>서울 미아브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 미아브랜치&nbsp;
+            <p class="sign-name">정연경</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">미아브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-5">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 6 · 남양주 별내브랜치 (우측) ────────────────── -->
+    <section class="detail-section" id="section-6">
+      <div class="video-bg" data-video="6"></div>
+      <div class="content-wrap right">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>남양주 별내브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 별내브랜치&nbsp;
+            <p class="sign-name">박준형</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">별내브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-6">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 7 · 안양 석수브랜치 (좌측) ──────────────────── -->
+    <section class="detail-section" id="section-7">
+      <div class="video-bg" data-video="7"></div>
+      <div class="content-wrap left">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>안양 석수브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 석수브랜치&nbsp;
+            <p class="sign-name">김지연</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">석수브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-7">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 8 · 용인 신갈브랜치 (우측) ──────────────────── -->
+    <section class="detail-section" id="section-8">
+      <div class="video-bg" data-video="8"></div>
+      <div class="content-wrap right">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>용인 신갈브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 신갈브랜치&nbsp;
+            <p class="sign-name">장채린</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">신갈브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-8">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 9 · 순천 신대브랜치 (좌측) ──────────────────── -->
+    <section class="detail-section" id="section-9">
+      <div class="video-bg" data-video="9"></div>
+      <div class="content-wrap left">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>순천 신대브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 신대브랜치&nbsp;
+            <p class="sign-name">김세라</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">신대브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-9">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 10 · 경기도 광주 양벌브랜치 (우측) ───────────── -->
+    <section class="detail-section" id="section-10">
+      <div class="video-bg" data-video="10"></div>
+      <div class="content-wrap right">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>경기도 광주 양벌브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 양벌브랜치&nbsp;
+            <p class="sign-name">김지한</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">양벌브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-10">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 11 · 여주브랜치 (좌측) ──────────────────────── -->
+    <section class="detail-section" id="section-11">
+      <div class="video-bg" data-video="11"></div>
+      <div class="content-wrap left">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>여주브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 여주브랜치&nbsp;
+            <p class="sign-name">홍세미</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">여주브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-11">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 12 · 청주 오송브랜치 (우측) ──────────────────── -->
+    <section class="detail-section" id="section-12">
+      <div class="video-bg" data-video="12"></div>
+      <div class="content-wrap right">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>청주 오송브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 오송브랜치&nbsp;
+            <p class="sign-name">박재욱</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">오송브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-12">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 13 · 파주 운정브랜치 (좌측) ──────────────────── -->
+    <section class="detail-section" id="section-13">
+      <div class="video-bg" data-video="13"></div>
+      <div class="content-wrap left">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>파주 운정브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 운정브랜치&nbsp;
+            <p class="sign-name">김현정</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">운정브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-13">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 14 · 파주 초롱꽃브랜치 (우측) ────────────────── -->
+    <section class="detail-section" id="section-14">
+      <div class="video-bg" data-video="14"></div>
+      <div class="content-wrap right">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>파주 초롱꽃브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 초롱꽃브랜치&nbsp;
+            <p class="sign-name">이가영</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">초롱꽃브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-14">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 15 · 고양 원흥브랜치 (좌측) ──────────────────── -->
+    <section class="detail-section" id="section-15">
+      <div class="video-bg" data-video="15"></div>
+      <div class="content-wrap left">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>고양 원흥브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 원흥브랜치&nbsp;
+            <p class="sign-name">지윤미</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">원흥브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-15">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 16 · 안산 초지브랜치 (우측) ──────────────────── -->
+    <section class="detail-section" id="section-16">
+      <div class="video-bg" data-video="16"></div>
+      <div class="content-wrap right">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>안산 초지브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 초지브랜치&nbsp;
+            <p class="sign-name">함대희</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">초지브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-16">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 섹션 17 · 창원브랜치 (좌측) ───────────────────────── -->
+    <section class="detail-section" id="section-17">
+      <div class="video-bg" data-video="17"></div>
+      <div class="content-wrap left">
+        <div class="detail-content">
+          <span class="sub-label">브랜치만의 프리미엄</span>
+          <h1 class="main-title">파머스국제어학원<br>창원브랜치</h1>
+          <p class="desc">영어를 가르치지 않고 영어로 자신을<br>성장시키는 법을 가르칩니다.</p>
+          <div class="sign-wrap">
+            by 창원브랜치&nbsp;
+            <p class="sign-name">구보미</p>
+            &nbsp;원장
+          </div>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-primary" target="_blank">창원브랜치 바로가기</a>
+          <button class="cta-interview" id="btn-interview-17">
+            interview
+            <span class="play-btn" aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       인터뷰 영상 모달
+  ══════════════════════════════════════════════════════════════ -->
+  <div id="interview-modal" role="dialog" aria-label="인터뷰 영상" aria-hidden="true">
+    <button id="modal-close" aria-label="닫기">&times;</button>
+    <!-- 추후 <video> 삽입 -->
+  </div>
+
+  <script src="resource/js/common.js"></script>
+  <script src="resource/js/edu-detail.js"></script>
+</body>
+</html>
