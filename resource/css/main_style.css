@@ -2034,8 +2034,7 @@ body {
   }
 
   .expert-line1,
-  .expert-line2,
-  {
+  .expert-line2 {
   font-size: 15px;
   margin-bottom: 5px;
   line-height: 1.2;
