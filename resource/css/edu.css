@@ -1,0 +1,766 @@
+/* ══════════════════════════════════════════════════════════════
+   edu.css — 에듀마스터 페이지 전용 스타일
+══════════════════════════════════════════════════════════════ */
+
+
+html,
+body {
+  overflow: auto;
+  overflow-x: hidden;
+  height: auto;
+}
+
+/* ── 공통 ───────────────────────────────────────────────────── */
+#edu-main {
+  font-family: 'Pretendard', sans-serif;
+  background:
+    url(../imgs_sub/ceo/Layer.png) top center / 100% auto no-repeat,
+    linear-gradient(0deg, #02123D 0%, #000 100%);
+  padding-bottom: 120px;            /* 웹 해상도(데스크탑) 전용 푸터 간격 */
+}
+
+/* ── 섹션 1 · 헤더 ──────────────────────────────────────────── */
+#edu-sec1 {
+  padding-top: var(--gnb-h, 72px);
+  padding-bottom: 60px;
+}
+
+/* 헤더 콘텐츠 중앙 정렬 */
+.edu-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+/* 상단 pill 배지 */
+.edu-badge {
+  display: inline-block;
+  fill: rgba(255, 255, 255, 0.7);
+stroke-width: 1px;
+stroke: rgba(142, 142, 142, 0.80);
+  color: #fff;
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  padding: 7px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin-bottom: 25px;
+}
+
+/* 타이틀 행 */
+.edu-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* 타이틀 텍스트 */
+.edu-title {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
+  font-weight: 900;
+  background: linear-gradient(to top left, #CCF352 0%, #FFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+/* name.png 전체를 타이틀 뒤에 중앙으로 깔기 */
+.edu-title::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130%;
+  height: 200%;
+  background: url(../imgs_sub/ceo/name.png) center / contain no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 서브 텍스트 */
+.edu-sub {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+  opacity: 0.6;
+
+}
+
+/* ── 섹션 2 · 프로필 카드 그리드 ───────────────────────────── */
+#edu-sec2 {
+  padding: 0px 40px 80px;
+}
+
+.pro-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 프로필 카드 */
+.pro-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  background: #111;
+  perspective: 900px;
+}
+
+/* ── 카드 플립 애니메이션 ────────────────────────────────────── */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.pro-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+  overflow: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to top left, #CCF352 0%, #FFF 100%);
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.back-name {
+  color: #000000;
+  font-family: 'NanumMyeongjo', 'Batang', Georgia, serif;
+  letter-spacing: 0.01em;
+  opacity: 0.7;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.back-desc {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pro-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* 하단 그라디언트 오버레이 */
+.pro-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.08) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* 텍스트: 좌하단 */
+.pro-info {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pro-branch {
+  font-size: 17px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.03em;
+}
+
+.pro-branch strong {
+  font-weight: 700;
+}
+
+.pro-name {
+  font-size: 15px;
+  font-weight: 400;
+  color: #CCF352;
+  line-height: 1.3;
+}
+
+/* 우하단 원형 화살표 버튼 */
+.pro-arrow {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255); 
+  background: transparent;
+  color: #fff;
+  font-size: 0;                        
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+/* 화살표 */
+.pro-arrow::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid currentColor; 
+  border-right: 2px solid currentColor; 
+  transform: rotate(45deg);
+  margin-left: -2px;                    
+  display: block;
+}
+
+/* 카드 뒷면(밝은 배경) 전용 화살표 */
+.card-back .pro-arrow {
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.6);     
+}
+
+.card-back .pro-arrow:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* ── 세부 페이지 여기서부터  ──────────────────────────── */
+#detail-main {
+  /* 각 섹션이 100vh — 스크롤로 순차 탐색 */
+}
+
+.detail-section {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #111;
+}
+
+/* 공통 콘텐츠 컨테이너 */
+.content-wrap {
+  position: absolute;
+  bottom: 200px;
+  z-index: 1;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 좌측 배치 */
+.content-wrap.left {
+  left: 250px;
+}
+
+/* 우측 배치 */
+.content-wrap.right {
+  left: auto;
+  right: 10%;
+  text-align: right;
+}
+
+.content-wrap.right .sign-wrap {
+  justify-content: flex-end;
+}
+
+.content-wrap.right .cta-wrap {
+  justify-content: flex-end;
+}
+
+.detail-content {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sub-label {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  opacity: 0.95;
+  margin-bottom: -6px;
+}
+
+.main-title {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.desc {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.sign-wrap {
+  display: flex;
+  align-items: center;
+  font-size: 0.90rem;
+  opacity: 0.85;
+  font-weight: 300;
+  gap: 4px;
+  margin-top: -12px;
+}
+
+.sign-name {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.7rem;
+  display: inline;
+  margin: 0;
+  line-height: 1;
+}
+
+.cta-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.cta-primary {
+  display: inline-block;
+  background: rgb(3, 0, 0, 0.1); 
+  color: #fff;                            
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  padding: 10px 26px;                       
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+.cta-primary:hover {
+  background: rgba(255, 255, 255, 0.3);    /* 호버 시 살짝 더 밝아지는 효과 */
+}
+
+.cta-interview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgb(3, 0, 0, 0.1); 
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 100px;
+  color: #fff;
+  padding: 10px 34px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  cursor: pointer;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.play-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e00;
+  color: #fff;
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-left: 2px;
+}
+
+
+.cta-interview .play-btn {
+  animation: none !important;
+}
+
+/* ── 점 네비게이션 (우측 고정) ──────────────────────────── */
+#section-dots {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.section-dot.active {
+  background: #CCF352;
+  transform: scale(1.5);
+}
+
+/* 인터뷰 모달 */
+#interview-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+#interview-modal.is-open {
+  display: flex;
+}
+
+#modal-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ── 1280px 이하: 표준 노트북 ───────────────────────────────── */
+@media (max-width: 1280px) {
+  #edu-sec2 { padding: 0 24px 80px; }
+  .content-wrap.left { left: 180px; }
+}
+
+/* ── 1024px 이하: 소형 노트북 / iPad 가로 ──────────────────── */
+@media (max-width: 1024px) {
+  #edu-sec2 { padding: 0 16px 60px; }
+  .pro-grid { grid-template-columns: repeat(4, 1fr); }
+  .content-wrap.left  { left: 120px; }
+  .content-wrap.right { right: 6%; }
+}
+
+/* ── 모바일 ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .edu-header {
+    padding: 40px 16px 32px;
+  }
+
+  .edu-badge {
+    font-size: 0.7rem;
+    padding: 6px 16px;
+    margin-bottom: 20px;
+  }
+
+  .edu-title-row {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .edu-sub {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  /* 카드 그리드: 5열 → 2열 */
+  #edu-sec1 {
+    padding-bottom: 10px;          
+  }
+
+  #edu-sec2 {
+    padding: 10px 16px 60px;       
+  }
+
+  .pro-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* 마지막 홀수 카드(17번째) 중앙 정렬 */
+  .pro-card:last-child:nth-child(odd) {
+    grid-column: span 2;
+    justify-self: center;
+    width: calc(50% - 10px);
+  }
+
+  .pro-name {
+    font-size: 0.72rem;
+  }
+
+  .pro-branch {
+    font-size: 0.88rem;
+  }
+
+  .main-title {
+    font-size: 32px;               
+  }
+
+  .back-name {
+    font-size: 11px;
+  }
+
+  /* 세부 페이지 모바일 */
+  .content-wrap.left,
+  .content-wrap.right {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: 60px;
+    width: 90%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .content-wrap .sign-wrap,
+  .content-wrap.right .sign-wrap {
+    justify-content: center;
+  }
+
+  .content-wrap .cta-wrap,
+  .content-wrap.right .cta-wrap {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-primary,
+  .cta-interview {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #section-dots {
+    display: none;
+  }
+}
+
+
+.edu-title.shimmer-play {
+  background: linear-gradient(90deg,
+      #CCF352 0%,
+      #CCF352 38%,
+      #FFFFFF 48%,
+      #FFFFFF 52%,
+      #FFFFFF 62%,
+      #CCF352 100%);
+  background-size: 300% 100%;
+  background-position: 150% center;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: literacy-shimmer 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+
+.anim-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.anim-card.anim-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 서브타이틀: 기존 .edu-sub(opacity:0.6)를 초기 숨김 → 등장 후 0.6 복귀 */
+.edu-sub {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.edu-sub.anim-visible {
+  opacity: 0.6;
+  transform: translateY(0);
+}
+
+/* ── 모바일 전용 줄바꿈 (mob-br, mo-br, mor-br) ── */
+.mob-br, .mo-br, .mor-br {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mob-br, .mor-br {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .mo-br {
+    display: block;
+  }
+  .sub-label {
+    font-size: 19px;
+  }
+  .main-title {
+    font-size: 31px;
+    font-weight: 700;
+  }
+
+  .desc {
+    line-height: 1.4;
+  }
+}
+
+@media (max-height: 740px) and (max-width: 480px) {
+  .sub-label {
+    font-size: 15px;
+  }
+  .main-title {
+    font-size: 29px;
+    font-weight: 700;
+  }
+  .desc {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .sign-name {
+    font-size: calc(1.7rem - 2px);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   배경 루프 영상 — 공통
+══════════════════════════════════════════════════════════════ */
+.video-bg video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%; 
+  z-index: 0;
+}
+
+.video-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   영상 위치 세부 조정 (PC) 
+   object-position: X Y  (좌우 상하, 0%~100%)
+────────────────────────────────────────────────────────────── */
+.video-bg[data-video="1"]  video { object-position: 50% 50%; }
+.video-bg[data-video="2"]  video { object-position: 50% 50%; }
+.video-bg[data-video="3"]  video { object-position: 70% 50%; }
+.video-bg[data-video="4"]  video { object-position: 40% 50%; }
+.video-bg[data-video="5"]  video { object-position: 60% 50%; }
+.video-bg[data-video="6"]  video { object-position: 50% 50%; }
+.video-bg[data-video="7"]  video { object-position: 50% 50%; }
+.video-bg[data-video="8"]  video { object-position: 50% 50%; }
+.video-bg[data-video="9"]  video { object-position: 50% 50%; }
+.video-bg[data-video="10"] video { object-position: 70% 50%; }
+.video-bg[data-video="11"] video { object-position: 50% 50%; }
+.video-bg[data-video="12"] video { object-position: 50% 50%; }
+.video-bg[data-video="13"] video { object-position: 50% 50%; }
+.video-bg[data-video="14"] video { object-position: 50% 50%; }
+.video-bg[data-video="15"] video { object-position: 50% 50%; }
+.video-bg[data-video="16"] video { object-position: 50% 50%; }
+.video-bg[data-video="17"] video { object-position: 50% 50%; }
+
+/* ──────────────────────────────────────────────────────────────
+   영상 위치 세부 조정 (모바일) 
+────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .video-bg[data-video="1"]  video { object-position: 70% 50%; }
+  .video-bg[data-video="2"]  video { object-position: 70% 50%; }
+  .video-bg[data-video="3"]  video { object-position: 50% 50%; }
+  .video-bg[data-video="4"]  video { object-position: 50% 50%; }
+  .video-bg[data-video="5"]  video { object-position: 40% 50%; }
+  .video-bg[data-video="6"]  video { object-position: 50% 50%; }
+  .video-bg[data-video="7"]  video { object-position: 60% 50%; }
+  .video-bg[data-video="8"]  video { object-position: 70% 50%; }
+  .video-bg[data-video="9"]  video { object-position: 50% 50%; }
+  .video-bg[data-video="10"] video { object-position: 60% 50%; }
+  .video-bg[data-video="11"] video { object-position: 20% 50%; }
+  .video-bg[data-video="12"] video { object-position: 50% 50%; }
+  .video-bg[data-video="13"] video { object-position: 50% 50%; }
+  .video-bg[data-video="14"] video { object-position: 40% 50%; }
+  .video-bg[data-video="15"] video { object-position: 50% 50%; }
+  .video-bg[data-video="16"] video { object-position: 70% 50%; }
+  .video-bg[data-video="17"] video { object-position: 70% 50%; }
+}
+
+
+.main-title {
+  background: linear-gradient(90deg,
+      #fff 0%,
+      #fff 38%,
+      rgba(255, 255, 255, 0.25) 48%,
+      rgba(255, 255, 255, 0.25) 52%,
+      #fff 62%,
+      #fff 100%);
+  background-size: 300% 100%;
+  background-position: 150% center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.main-title.shimmer-active {
+  animation: literacy-shimmer 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
